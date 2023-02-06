@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- //<link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <link rel="icon" href="/public/favicon.ico" >
     <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
@@ -12,7 +12,35 @@
     <title>笔忆BiYi (o゜▽゜)o / Second hand transaction~</title>
   </head>
   <body bgcolor="whitesmoke">
+    
     <script type="module" src="/src/main.js"></script>
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
       <div id="app"></div>
+      <script>
+        L2Dwidget.init({
+            "model": {
+    　　　　　　　//jsonpath控制显示那个小萝莉模型，
+          //(切换模型需要改动)
+    //				"https://unpkg.com/(live2d-widget-model-koharu)@1.0.5/assets/(koharu).model.json"
+                jsonPath: "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json",
+                "scale": 1
+            },
+            "display": {
+                "position": "right", //看板娘的表现位置
+                "width": 150,  //小萝莉的宽度
+                "height": 300, //小萝莉的高度
+                "hOffset": -60,
+                "vOffset": -140
+            },
+            "mobile": {
+                "show": true,
+                "scale": 0.5
+            },
+            "react": {
+                "opacityDefault": 1,
+                "opacityOnHover": 0.2
+            }
+        });
+    </script>
   </body>
 </html>

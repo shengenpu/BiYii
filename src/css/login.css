@@ -6,7 +6,13 @@
   -ms-user-select: none; /*IE10*/
   user-select: none;
 }
-
+img {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
 .demo {
   float: right;
   margin-right: 230px;
@@ -14,14 +20,30 @@
   cursor: pointer;
 }
 #header {
-  width: 1535px;
-  height: 42px;
-  background-color:white;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 999999;
+  padding-top: 10px;
+  background: url("../img/headeron.jpg");
   box-shadow: 3px 5px 10px gray;
 }
+#footer {
+  width: 100%;
+  height: 60px;
+  font-size: 10px;
+  box-shadow: 3px -2px 5px gray;
+  text-align: center;
+  line-height: 60px;
+  background-color: gainsboro;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 #mask {
-  position: absolute;  
+  position: absolute;
   background: rgb(0, 0, 0, 0.5);
+  z-index: 100;
   top: 0;
   left: 0;
   bottom: 0;
@@ -31,12 +53,15 @@
   width: 800px;
   height: 445px;
   left: 50%;
-  top: 47%;
-  position: absolute;
+  top: 50%;
+  position: fixed;
   transform: translate(-50%, -50%);
   border-radius: 10px;
   background-color: whitesmoke;
-  margin: 0 auto;
+
+}
+.el-message {
+  top: 85px !important;
 }
 .demo1 {
   width: 450px;
@@ -62,6 +87,9 @@
   height: 445px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.el-container {
+  position: relative;
 }
 .imgre {
   width: 330px;
@@ -102,47 +130,55 @@
   margin-left: 120px;
   border-radius: 5px;
 }
-.logoimg{
+.logoimg {
   width: 30px;
   position: absolute;
   left: 200px;
   top: 5px;
+  margin-top: 10px;
   border-radius: 5px;
 }
-.search{
+.search {
   width: 250px;
-  height: 25px;
-  
-  margin-top: 0px;
+  height: 30px;
+}
+.seardiv {
+  width: 254px;
+  height: 34px;
+  padding-top: 4px;
+  padding-left: 5px;
   margin-left: 50px;
+  background-color: rgb(220, 220, 220);
+  display: inline-block;
+  border-radius: 5px;
 }
-#gosearch{
+#gosearch {
   position: absolute;
-  margin-top: 16px;
-  width: 35px;
+  margin-top: 8px;
+  width: 50px;
 }
-ul{
+ul {
   display: inline;
 }
-ul li{
+ul li {
   line-height: 40px;
   margin-left: 100px;
   display: inline;
 }
-.mine{
+.mine {
   float: right;
   margin-right: 230px;
   line-height: 40px;
   cursor: pointer;
 }
-.router1{
+.router1 {
   float: right;
   line-height: 40px;
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
-#avatar{
+#avatar {
   width: 35px;
   height: 35px;
   border-radius: 50px;
@@ -155,4 +191,232 @@ ul li{
   color: var(--el-color-primary);
   display: flex;
   align-items: center;
+}
+#inavatar {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+#inavatar:hover {
+  filter: brightness(75%);
+}
+.elcard {
+  width: 905px;
+  height: 200px;
+  margin-top: 10px;
+  margin: 0 auto;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px gray;
+  background-color: white;
+}
+.informationbody {
+  width: 800px;
+  height: 0;
+  padding-bottom: 90%;
+  display: table;
+  margin: 0 auto;
+  margin-top: 90px;
+  padding: 30px;
+  padding-top: 50px;
+  border-radius: 5px;
+  background-color: white;
+}
+.information {
+  position: absolute;
+  display: flex;
+  z-index: 6;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.idac {
+  font-size: 20px;
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 195px;
+}
+.idacc {
+  width: 500px;
+  border: none;
+}
+.idacc:focus {
+  outline: none;
+}
+.imgcutter {
+  width: 200px;
+}
+.textarea {
+  width: 700px;
+  resize: none;
+  border-color: gainsboro;
+}
+.routerstyle {
+  text-decoration: none;
+  color: black;
+}
+.goods {
+  width: 905px;
+  margin-top: 20px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px gray;
+  background-color: white;
+}
+.bodymarg {
+  margin-left: 50px;
+}
+.goodinput {
+  width: 665px;
+}
+#carousel {
+  width: 550px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 10px gray;
+  float: left;
+}
+.goodsfor6 {
+  width: 700px;
+  margin-top: 60px;
+  float: left;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px gray;
+  background-color: white;
+}
+.goodsfor3 {
+  margin-left: 25px;
+  font-weight: 550;
+  float: left;
+}
+.goodsfor2p1 {
+  float: left;
+}
+.goodsfor1 {
+  width: 200px;
+}
+.goodsfor2p2 {
+  float: right;
+  font-size: 20px;
+  font-weight: 1000;
+  color: rgb(203, 64, 64);
+}
+.text-container {
+  height: 20px;
+  font-size: 30px;
+  font-weight: 10;
+  background-color: white;
+  border: 1px solid whitesmoke;
+  box-shadow: 3px 5px 10px rgb(159, 159, 159);
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 70px;
+  margin-bottom: 12px;
+}
+#classit {
+  width: 1270px;
+  height: 550px;
+  float: left;
+  background-color: white;
+  margin-top: 25px;
+  box-shadow: 3px 5px 10px rgb(159, 159, 159);
+  margin-bottom: 90px;
+  margin-left: 100px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+}
+#classleft {
+  width: 200px;
+  float: left;
+}
+#classleft button {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: white;
+  margin-bottom: 30px;
+  box-shadow: 3px 5px 10px rgb(159, 159, 159);
+  border: 1px solid whitesmoke;
+}
+#classright {
+  width: 1000px;
+  height: 500px;
+  padding-left: 10px;
+  padding-top: 30px;
+  float: right;
+  margin-right: 20px;
+  background-color: white;
+}
+.showfor3 {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 60px;
+  margin-left: 25px;
+  font-weight: 550;
+  float: left;
+}
+#goodsoneimg {
+  width: 400px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  float: left;
+}
+.giao {
+  color: black;
+  font-size: 15px;
+  line-height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.giaoyahu {
+  width: 400px;
+  height: 100px;
+  background-color: antiquewhite;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 3px solid #000;
+  border-top: 3px solid #000;
+}
+.goorder {
+  width: 400px;
+  height: 200px;
+  color: brown;
+  margin-left: 470px;
+  font-size: 30px;
+}
+.buyit {
+  width: 950px;
+  height: 450px;
+  margin-top: 60px;
+  margin-left: 250px;
+  padding-top: 20px;
+  padding-left: 60px;
+  background-color: white;
+  border: 1px solid whitesmoke;
+  box-shadow: 3px 5px 10px rgb(159, 159, 159);
+}
+.order{
+  width: 350px;
+  height: 450px;
+  padding-top: 60px;
+  padding-left: 60px;
+  left: 40%;
+  top: 15%;
+  position: absolute;
+  z-index: 99996;
+  background-color: white;
+  border: 1px solid whitesmoke;
+  box-shadow: 3px 5px 10px rgb(159, 159, 159);
 }
